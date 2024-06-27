@@ -12,12 +12,12 @@
 #include <HTTPClient.h>
 
 
-String ssid = "Charlie";
-String password = "200122Charlie";
+String ssid = "Hedwig";
+String password = "bqlasova";
 String ip = "ipv4";
 String apiUrl = "http://" + ip + ":8080/api/rest/v1/laser-tag";
 
-const int valueToSend = 10;
+String playerName = "Gosho";
 const int sensor_pin = A0;
 const int threshold = 4000;  
 
@@ -40,7 +40,7 @@ void loop() {
       HTTPClient  client;
       client.begin("apiUrl");
       client.addHeader("Content-Type", "application/json");
-      client.POST("valueToSend");
+      client.POST(playerName);
       delay(5000);
     }  
   }  
